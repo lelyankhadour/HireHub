@@ -13,11 +13,14 @@ class ProjectService
         $minBudget = $request->query('min_budget');
         $maxBudget = $request->query('max_budget');
         $sort      = $request->query('sort', 'newest');
-
+   
+     // Query scopes are used to keep filtering logic reusable and readable
         return Project::query()
             ->forProjectListing()
             ->filterByTag($tag)
             ->filterByBudgetRange($minBudget, $maxBudget)
+    
+            // Conditional sorting is handled through "when" for fluent readability.
             ->when($sort === 'top_rated', fn($q) => $q->orderByDesc('reviews_avg_rating'))
 
             ->when($sort === 'newest', fn($q) => $q->sortByNewest())
@@ -37,6 +40,7 @@ class ProjectService
         ]);
 
         // Tags
+      // sync() is used because it correctly manages many-to-many relations.
         if (!empty($data['tags'])) {
             $project->tags()->sync($data['tags']);
         }

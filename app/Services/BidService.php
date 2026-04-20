@@ -24,17 +24,17 @@ class BidService implements BidServiceInterface
     public function accept(Bid $bid): Bid
     {
         return DB::transaction(function () use ($bid) {
-            // 1) قبول العرض
+      
             $bid->update(['status' => 'accepted']);
 
-            // 2) تغيير حالة المشروع
+           
             $bid->project->update(['status' => 'in_progress']);
 
-            // 3) رفض باقي العروض
+       
             $bid->project->bids()
                 ->where('id', '!=', $bid->id)
                 ->update(['status' => 'rejected']);
-
+ // fresh() is used to return updated relations without reloading everything manually.
             return $bid->fresh(['project', 'freelancer']);
         });
     }

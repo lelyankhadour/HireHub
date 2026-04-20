@@ -19,7 +19,8 @@ class ProfileService
         if (isset($data['skills'])) {
             $user->skills()->sync($data['skills']);
         }
-
+    // Relations are loaded here to return a complete profile response
+        // without overloading the controller.
         return $user->load([
             'city',
             'skills',
@@ -29,6 +30,8 @@ class ProfileService
 
     public function updateProfileSkill(User $user, array $skills)
     {
+         // Transforming the skills array into pivot format is done here
+        // because it is part of business logic, not presentation logic.
         $skills = collect($skills);
 
         $syncData = $skills->mapWithKeys(function ($skill) {

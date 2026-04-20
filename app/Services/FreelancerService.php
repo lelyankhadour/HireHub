@@ -7,7 +7,8 @@ use App\Models\User;
 class FreelancerService
 {
     public function listFreelancers($skill, $cityId, $sort)
-    {
+    { 
+           // Scopes encapsulate filtering logic inside the model for reusability.
         return User::query()
             ->where('role', 'freelancer')
             ->forFreelancerListing($skill, $cityId)
