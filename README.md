@@ -55,7 +55,7 @@ composer install
 # 🔗 API Endpoints
 
 ## 🔐 Authentication
-POST /api/v1/auth/register
+POST /api/v1/auth/register  
 POST /api/v1/auth/login
 POST /api/v1/auth/logout  
  
@@ -73,31 +73,31 @@ POST   /api/v1/projects              (auth required)
 POST   /api/v1/projects/{project}/bids   (auth + freelancer.verified)
 
 ### Project Filters
-?tag=Laravel
-?min_budget=100
-?max_budget=500
-?last_month=1
-?sort=newest
+?tag=Laravel  
+?min_budget=100  
+?max_budget=500  
+?last_month=1  
+?sort=newest  
 ?sort=top_rated
 
 ---
 
 ## 💼 Bids
-POST /api/v1/projects/{id}/bids
+POST /api/v1/projects/{id}/bids  
 POST /api/v1/bids/{id}/accept
 
 ---
 
 ## 👤 Freelancers
-GET /api/v1/freelancers
+GET /api/v1/freelancers  
 GET /api/v1/freelancers/{user}
 
 ---
 
 ## 🧑 Profile (Authenticated User)
-GET  /api/v1/profile                 (auth required)
-PUT  /api/v1/profile                 (auth required)
-PUT  /api/v1/profile/skills          (auth + freelancer.verified)
+GET  /api/v1/profile                 (auth required)  
+PUT  /api/v1/profile                 (auth required)  
+PUT  /api/v1/profile/skills          (auth + freelancer.verified)  
 
 
 ## 📬 Postman Collection
