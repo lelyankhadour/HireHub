@@ -10,10 +10,9 @@ The system focuses on clean architecture, scalability, and maintainability, with
 1. [Project Overview](#project-overview)  
 2. [Tech Stack](#tech-stack)  
 3. [Installation](#installation)  
-4. [Setup](#setup)  
-5. [Run the Application](#run-the-application)  
-6. [API Endpoints](#api-endpoints)  
-7. [Architectural Decisions](#architectural-decisions)  
+4. [Run the Application](#run-the-application)  
+5. [API Endpoints](#api-endpoints)  
+
 
 
 ---
@@ -54,7 +53,7 @@ composer install
 
 # ✅ **API Endpoints (Markdown – Copy/Paste Ready)**
 
-```markdown
+
 # 🔗 API Endpoints
 
 ## 🔐 Authentication
