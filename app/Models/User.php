@@ -171,7 +171,7 @@ public function scopeForFreelancerProfile($query)
 // الحل هنا بالجلب المسبق للبيانات يتم حساب المعدل مرة واحدة وليس مع كل استخدام
     protected function ratingText(): Attribute
 {
-    // يوجد خطأ هنا تذكري اختباره واصلاحه
+
     return Attribute::get(function () {
         if ($this->reviews_count === 0) {
             return 'No reviews yet';
