@@ -49,9 +49,8 @@ cd hirehub
 composer install
  
 
----
-
-# ✅ **API Endpoints (Markdown – Copy/Paste Ready)**
+ 
+## 📦 API Endpoints
 
 
 # 🔗 API Endpoints
