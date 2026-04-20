@@ -56,7 +56,7 @@ composer install
 
 ## 🔐 Authentication
 POST /api/v1/auth/register  
-POST /api/v1/auth/login
+POST /api/v1/auth/login  
 POST /api/v1/auth/logout  
  
 ---
@@ -67,8 +67,8 @@ GET /api/v1/dashboard
 
 
 ## 📁 Projects
-GET    /api/v1/projects
-GET    /api/v1/projects/{project}
+GET    /api/v1/projects  
+GET    /api/v1/projects/{project}  
 POST   /api/v1/projects              (auth required)
 POST   /api/v1/projects/{project}/bids   (auth + freelancer.verified)
 
