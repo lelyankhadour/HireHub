@@ -1,0 +1,918 @@
+{
+  "info": {
+    "_postman_id": "adb746ab-1fcc-4e1c-854c-82b2e78ef62b",
+    "name": "HIREHUB Copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50482083",
+    "_collection_link": "https://go.postman.co/collection/50482083-adb746ab-1fcc-4e1c-854c-82b2e78ef62b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "screen1",
+      "item": [
+        {
+          "name": "create project",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "project list test",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "7|s6mlFy34lqlsEU3B1dax2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/projects",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "projects"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "project list test",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/projects",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 18 Apr 2026 06:40:53 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Voluptatum nostrum tempora veniam.\",\n            \"description\": \"Dolor dolores dolores exercitationem modi quibusdam nisi. Et id quibusdam ut deleniti minima possimus ea. Reprehenderit qui mollitia sint iusto quisquam.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"70.00\",\n            \"formatted_budget\": \"70.00 USD\",\n            \"deadline\": \"2026-05-18\",\n            \"deadline_status\": \"29.721603504803 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 1,\n                \"full_name\": \"Admin User\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Beirut\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"AI\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Marketing\"\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"Web\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Non nihil voluptas assumenda amet.\",\n            \"description\": \"Molestias unde aut aut accusamus voluptate a sed rerum. Velit pariatur eos consequatur eius omnis a. At aut sint qui veritatis corporis incidunt. Hic rem nesciunt eligendi deleniti tenetur. Et ex doloribus libero quaerat magni est. Sit non excepturi enim ut quo voluptatem.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"348.00\",\n            \"formatted_budget\": \"348.00 USD\",\n            \"deadline\": \"2026-04-27\",\n            \"deadline_status\": \"8.7216033664468 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 1,\n                \"full_name\": \"Admin User\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Beirut\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Frontend\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Mobile\"\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"Web\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Vel impedit soluta nesciunt omnis.\",\n            \"description\": \"Recusandae odit omnis eum minima occaecati est quae. Iste unde consequuntur voluptas voluptatem voluptates minus quia. Voluptatem et dolorem ex quas adipisci dolorem in consequatur. Consequatur aut vel est sed dolores mollitia optio. Vero nisi quam sed sit ullam tenetur ex porro.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"60.00\",\n            \"formatted_budget\": \"60.00 USD\",\n            \"deadline\": \"2026-05-15\",\n            \"deadline_status\": \"26.721603332778 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 1,\n                \"full_name\": \"Admin User\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Beirut\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"API\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Frontend\"\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"Web\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Id totam qui omnis accusamus dolorem et iure.\",\n            \"description\": \"Numquam harum labore enim aut nihil. Animi qui maxime quod ut et ducimus. Accusantium natus eveniet ipsam qui.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"270.00\",\n            \"formatted_budget\": \"270.00 USD\",\n            \"deadline\": \"2026-04-26\",\n            \"deadline_status\": \"7.7216033115972 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 2,\n                \"full_name\": \"Christine Mann\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Beirut\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"AI\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"SEO\"\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"Web\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Corrupti tempore autem velit repellendus eligendi.\",\n            \"description\": \"Minus porro maxime dignissimos optio. Dicta magnam ducimus non consequatur veniam optio. Harum qui libero earum consequatur asperiores rerum. Expedita atque placeat hic repudiandae eligendi qui. Sit magni et nisi molestiae deleniti.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"324.00\",\n            \"formatted_budget\": \"324.00 USD\",\n            \"deadline\": \"2026-05-04\",\n            \"deadline_status\": \"15.721603265 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 2,\n                \"full_name\": \"Christine Mann\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Beirut\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"AI\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Backend\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Mobile\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Omnis non aspernatur dolores temporibus.\",\n            \"description\": \"Quo libero sit vero dolore qui eius et. Consequatur et suscipit eum et ut voluptate. Quaerat dolorum expedita qui fuga nihil aut odio.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"482.00\",\n            \"formatted_budget\": \"482.00 USD\",\n            \"deadline\": \"2026-04-25\",\n            \"deadline_status\": \"6.7216032489583 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 2,\n                \"full_name\": \"Christine Mann\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Beirut\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"AI\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"API\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"SEO\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Itaque rerum fugiat et labore suscipit.\",\n            \"description\": \"Rerum facere non soluta aut. Recusandae optio perspiciatis saepe velit. Enim molestias ab voluptas omnis. Quae ut magnam fugit et.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"286.00\",\n            \"formatted_budget\": \"286.00 USD\",\n            \"deadline\": \"2026-05-10\",\n            \"deadline_status\": \"21.721603231366 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 3,\n                \"full_name\": \"John Doe\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Dubai\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 9,\n                    \"name\": \"Branding\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Frontend\"\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"Web\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 12,\n            \"title\": \"Libero libero et reiciendis.\",\n            \"description\": \"Aspernatur enim esse aliquam quas iusto. Eaque voluptatem quam exercitationem et. Dolores molestiae explicabo ex adipisci ratione. Unde pariatur quo corporis ea.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"420.00\",\n            \"formatted_budget\": \"420.00 USD\",\n            \"deadline\": \"2026-05-09\",\n            \"deadline_status\": \"20.721603191019 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 3,\n                \"full_name\": \"John Doe\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Dubai\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"API\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Frontend\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"SEO\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        },\n        {\n            \"id\": 13,\n            \"title\": \"Deserunt sint quis consequuntur.\",\n            \"description\": \"Aliquam quia minus veritatis laudantium. Facere sint voluptas molestias commodi velit rerum consequuntur quas. Rem eveniet animi reprehenderit consequuntur dolores. Autem omnis sequi at sint repudiandae nesciunt id. Ut sequi provident sit eos ut necessitatibus. Officiis numquam corporis non.\",\n            \"budget_type\": \"fixed\",\n            \"budget_amount\": \"101.00\",\n            \"formatted_budget\": \"101.00 USD\",\n            \"deadline\": \"2026-05-17\",\n            \"deadline_status\": \"28.721603173553 days left\",\n            \"status\": \"open\",\n            \"client\": {\n                \"id\": 3,\n                \"full_name\": \"John Doe\",\n                \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n                \"city\": \"Dubai\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 9,\n                    \"name\": \"Branding\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Frontend\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Mobile\"\n                }\n            ],\n            \"bids_count\": 2,\n            \"reviews_avg_rating\": null,\n            \"created_at\": \"16 seconds ago\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/v1/projects?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/v1/projects?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/projects?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/v1/projects\",\n        \"per_page\": 10,\n        \"to\": 9,\n        \"total\": 9\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "project details",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "2|hYPc0SDlOXQ5Wat7jc52RynDZW7xB2GQURB4cY1U1b8375c3",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer 2|hYPc0SDlOXQ5Wat7jc52RynDZW7xB2GQURB4cY1U1b8375c3",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/projects/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "project details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "bearer 2|hYPc0SDlOXQ5Wat7jc52RynDZW7xB2GQURB4cY1U1b8375c3",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/projects/1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 18 Apr 2026 06:46:33 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Voluptatum nostrum tempora veniam.\",\n        \"description\": \"Dolor dolores dolores exercitationem modi quibusdam nisi. Et id quibusdam ut deleniti minima possimus ea. Reprehenderit qui mollitia sint iusto quisquam.\",\n        \"budget_type\": \"fixed\",\n        \"budget_amount\": \"70.00\",\n        \"formatted_budget\": \"70.00 USD\",\n        \"deadline\": \"2026-05-18\",\n        \"deadline_status\": \"29.717672891481 days left\",\n        \"status\": \"open\",\n        \"client\": {\n            \"id\": 1,\n            \"full_name\": \"Admin User\",\n            \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n            \"city\": \"Beirut\"\n        },\n        \"tags\": [\n            {\n                \"id\": 10,\n                \"name\": \"AI\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Marketing\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Web\"\n            }\n        ],\n        \"attachments\": [],\n        \"bids_count\": null,\n        \"reviews_avg_rating\": null,\n        \"created_at\": \"5 minutes ago\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "screen2",
+      "item": [
+        {
+          "name": "freelancer list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "ali",
+                  "type": "text",
+                  "uuid": "0235affe-d05e-4255-88ee-1c9948410b51"
+                },
+                {
+                  "key": "email",
+                  "value": "ali@gimail.com",
+                  "type": "text",
+                  "uuid": "0f11f7b9-d562-425c-bec0-87d85a0d1198"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "df47d6e7-fd23-44b2-a04b-161e2fb62171"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/freelancers",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "freelancers"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "screen 3",
+      "item": [
+        {
+          "name": "bid store",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 3|rRCZmjur1cprxYnAc8AJ3cfT4sm2QZr2HsDXE4bu6ddab8c6",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"amount\": 150,\r\n    \"duration\": 7,\r\n    \"cover_letter\": \"I can do this project professionally.\",\r\n    \"delivery_days\":4\r\n}\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/projects/30/bids",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "30",
+                "bids"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bid show",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 1|jzHTnRnNKx1VorBbLvwCuk6ugTWIUA0ubWSjLeXi9723bfb5",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "ali",
+                  "type": "text",
+                  "uuid": "0235affe-d05e-4255-88ee-1c9948410b51"
+                },
+                {
+                  "key": "email",
+                  "value": "ali@gimail.com",
+                  "type": "text",
+                  "uuid": "0f11f7b9-d562-425c-bec0-87d85a0d1198"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "df47d6e7-fd23-44b2-a04b-161e2fb62171"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/bids/1",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "bids",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "screen4",
+      "item": [
+        {
+          "name": "profile freelancer",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 2|G3sc2JsgwJM5GK2Z15iCFZRHg6v4F9q5MBLRWZEvc6506da7",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "ali",
+                  "type": "text",
+                  "uuid": "0235affe-d05e-4255-88ee-1c9948410b51"
+                },
+                {
+                  "key": "email",
+                  "value": "ali@gimail.com",
+                  "type": "text",
+                  "uuid": "0f11f7b9-d562-425c-bec0-87d85a0d1198"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "df47d6e7-fd23-44b2-a04b-161e2fb62171"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/profile/6",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "profile",
+                "6"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "profile freelancer",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "bearer 2|G3sc2JsgwJM5GK2Z15iCFZRHg6v4F9q5MBLRWZEvc6506da7",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "ali",
+                      "type": "text",
+                      "uuid": "0235affe-d05e-4255-88ee-1c9948410b51"
+                    },
+                    {
+                      "key": "email",
+                      "value": "ali@gimail.com",
+                      "type": "text",
+                      "uuid": "0f11f7b9-d562-425c-bec0-87d85a0d1198"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "df47d6e7-fd23-44b2-a04b-161e2fb62171"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/profile/6",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "profile",
+                    "6"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Apr 2026 06:27:42 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"id\": 6,\n        \"full_name\": \"Lele Kareem\",\n        \"email\": \"leo@hirehub.com\",\n        \"city\": \"Beirut\",\n        \"phone\": null,\n        \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n        \"member_since\": \"Member since April 2026\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "skill update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 2|0peUtYzDdl8niT2g50PEpWEnBTYY1D2kgYhfpQkta2a642c3",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"skills\": [\r\n        { \"id\": 1, \"years_of_experience\": 3 },\r\n        { \"id\": 4, \"years_of_experience\": 1 }\r\n    ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/profile/skills",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "profile",
+                "skills"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "skill update",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "bearer 2|G3sc2JsgwJM5GK2Z15iCFZRHg6v4F9q5MBLRWZEvc6506da7",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"skills\": [\r\n        { \"id\": 1, \"years_of_experience\": 3 },\r\n        { \"id\": 4, \"years_of_experience\": 1 }\r\n    ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/profile/skills",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "profile",
+                    "skills"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Apr 2026 06:29:21 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Skills updated successfully.\",\n    \"skills\": [\n        {\n            \"id\": 1,\n            \"name\": \"PHP\",\n            \"created_at\": \"2026-04-19T05:48:44.000000Z\",\n            \"updated_at\": \"2026-04-19T05:48:44.000000Z\",\n            \"pivot\": {\n                \"user_id\": 6,\n                \"skill_id\": 1,\n                \"years_of_experience\": 3,\n                \"created_at\": \"2026-04-19T06:29:21.000000Z\",\n                \"updated_at\": \"2026-04-19T06:29:21.000000Z\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Vue.js\",\n            \"created_at\": \"2026-04-19T05:48:44.000000Z\",\n            \"updated_at\": \"2026-04-19T05:48:44.000000Z\",\n            \"pivot\": {\n                \"user_id\": 6,\n                \"skill_id\": 4,\n                \"years_of_experience\": 1,\n                \"created_at\": \"2026-04-19T06:29:21.000000Z\",\n                \"updated_at\": \"2026-04-19T06:29:21.000000Z\"\n            }\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "screen5",
+      "item": [
+        {
+          "name": "dashboard",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "7|s6mlFy34lqlsEU3B1dax2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/dashboard",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "dashboard"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "dashboard",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/dashboard",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dashboard"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Apr 2026 10:41:34 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"total_projects\": 96,\n    \"open_projects\": 90,\n    \"total_freelancers\": 2,\n    \"total_clients\": 3,\n    \"total_bids\": 180\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"first_name\": \"Lina\",\r\n    \"last_name\": \"Kareem\",\r\n    \"email\": \"freelancer_new@hirehub.com\",\r\n    \"password\": \"password\",\r\n    \"role\": \"freelancer\",\r\n    \"phone\": \"555555555\",\r\n    \"city_id\": 1\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "accept bid",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
