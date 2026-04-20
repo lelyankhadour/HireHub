@@ -47,8 +47,7 @@ I am working on The system is built to be **extensible**, allowing future featur
 git clone 
 cd hirehub
 composer install
- 
-
+ ```
  
 ## 📦 API Endpoints
 
