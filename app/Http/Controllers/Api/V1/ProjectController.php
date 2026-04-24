@@ -43,7 +43,7 @@ class ProjectController extends Controller
     {try{
         $project = $this->service->store($request->validated(), $request);
         // return new ProjectResource($project);
-           return $this->successResponse(new ProjectResource($project), "Operation completed successfully", 200);
+           return $this->successResponse(new ProjectResource($project), "Operation completed successfully", 201);
            }catch (\Throwable $e) {
             return $this->errorResponse("Something went wrong " . $e->getMessage(), 500);
         }

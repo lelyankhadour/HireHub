@@ -32,7 +32,8 @@ class AuthService
         $user = User::where('email', $data['email'])->first();
 
         if (! $user || ! Hash::check($data['password'], $user->password)) {
-            return null;
+         return response()->json(['message' => 'Invalid credentials'], 401);
+
         }
 
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -46,5 +47,6 @@ class AuthService
     public function logout($user)
     {
         $user->currentAccessToken()->delete();
+        return true;
     }
 }

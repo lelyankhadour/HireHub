@@ -11,7 +11,7 @@ class BidService implements BidServiceInterface
 {
     public function create(array $data, int $projectId): Bid
     {
-        $project = Project::findOrFail($projectId);
+        $project = Project ::open()->findOrFail($projectId);
 
         return $project->bids()->create([
             'freelancer_id' => auth()->id(),
@@ -23,6 +23,11 @@ class BidService implements BidServiceInterface
 
     public function accept(Bid $bid): Bid
     {
+    //only owner the project can accept the bid
+        if ($bid->project->client_id !== auth()->id()) {
+    throw new \Exception("You are not allowed to accept this bid");
+}
+// I used a database transaction here to make sure all updates happen together
         return DB::transaction(function () use ($bid) {
       
             $bid->update(['status' => 'accepted']);

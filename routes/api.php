@@ -20,9 +20,9 @@ Route::prefix('v1')->group(function () {
     });
 
 
-    Route:: get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
-  
+
     Route::prefix('projects')->group(function () {
 
         Route::get('/', [ProjectController::class, 'index']);
@@ -31,26 +31,25 @@ Route::prefix('v1')->group(function () {
         Route::middleware(['auth:sanctum'])
             ->post('/', [ProjectController::class, 'store']);
 
-     
+
         Route::middleware(['auth:sanctum', 'freelancer.verified'])
             ->post('/{project}/bids', [BidController::class, 'store']);
 
 
     });
 
-    
+
     Route::prefix('bids')->middleware('auth:sanctum')->group(function () {
         Route::get('/{bid}', [BidController::class, 'show']);
-          Route::post('/{id}/accept', [BidController::class, 'accept'])
-    ->middleware('auth:sanctum');
+        Route::post('/{id}/accept', [BidController::class, 'accept'])->middleware('auth:sanctum');
     });
 
-    Route::prefix('freelancers')->middleware('auth:sanctum')->group(function () {
+    Route::prefix('freelancers')->group(function () {
         Route::get('/', [FreelancerController::class, 'index']);
         Route::get('/{user}', [FreelancerController::class, 'show']);
     });
 
-    
+
     Route::prefix('profile')->middleware('auth:sanctum')->group(function () {
         Route::get('/', [ProfileController::class, 'show']);
         Route::put('/', [ProfileController::class, 'update']);

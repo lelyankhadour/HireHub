@@ -10,68 +10,60 @@ use App\Services\AuthService;
 use Illuminate\Http\Request;
 use App\Traits\ResponseTrait;
 class AuthController extends Controller
-{use ResponseTrait;
+{
+    use ResponseTrait;
     protected AuthService $service;
 
     public function __construct(AuthService $service)
     {
         $this->service = $service;
     }
-// DIP 
+    // DIP 
     public function register(RegisterRequest $request)
-    {try{
-        $result = $this->service->register($request->validated());
+    {
+        try {
+            $result = $this->service->register($request->validated());
 
-        // return response()->json([
-        //     'user'  => new ProfileResource($result['user']),
-        //     'token' => $result['token'],
-        // ], 201);
-        
-        $data= [
-            'user'  => new ProfileResource($result['user']),
-            'token' => $result['token'],
-        ];
-                return $this->successResponse($data, "Register completed successfully", 201);
-            
-        }catch (\Throwable $e) {
-            return $this->errorResponse("An unexpected error occurred " , 500);
-        } 
+            $data = [
+                'user' => new ProfileResource($result['user']),
+                'token' => $result['token'],
+            ];
+            return $this->successResponse($data, "Registertion completed successfully", 201);
+
+        } catch (\Throwable $e) {
+            return $this->errorResponse("An unexpected error occurred ", 500);
+        }
     }
 
     public function login(LoginRequest $request)
-    {try{
-        $result = $this->service->login($request->validated());
+    {
+        try {
+            $result = $this->service->login($request->validated());
 
-        if (! $result) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
+            if (!$result) {
+                return $this->errorResponse("Invalid credentials  ", 401);
+            }
+
+            $data = [
+                'user' => new ProfileResource($result['user']),
+                'token' => $result['token'],
+            ];
+
+            return $this->successResponse($data, "Logged in successfully", 200);
+
+        } catch (\Throwable $e) {
+            return $this->errorResponse("Something went wrong ", 500);
         }
-
-        // return response()->json([
-        //     'user'  => new ProfileResource($result['user']),
-        //     'token' => $result['token'],
-        // ]);
-                $data=[
-            'user'  => new ProfileResource($result['user']),
-            'token' => $result['token'],
-        ];
-        
-                return $this->successResponse( $data, "Login completed successfully", 200);
-            
-        }catch (\Throwable $e) {
-            return $this->errorResponse("Something went wrong " , 500);
-        } 
     }
 
     public function logout(Request $request)
-    {try{
-        $this->service->logout($request->user());
+    {
+        try {
+            $this->service->logout($request->user());
+            return $this->successResponse(null, "Logged out successfully", 200);
 
-        // return response()->json(['message' => 'Logged out successfully']);
-        
-     return $this->successResponse( null, "Logged out successfully", 200);
-            
-        }catch (\Throwable $e) {
-            return $this->errorResponse("An unexpected error occurred" , 500);
-        } 
+        } catch (\Throwable $e) {
+            return $this->errorResponse("Something went wrong", 500);
+        }
     }
 }

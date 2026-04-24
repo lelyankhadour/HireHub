@@ -34,8 +34,7 @@ class BidController extends Controller
 
     public function accept($id)
     {try{
-        // اضافة شر
-        // ط للتاكد ان من قبل الغرض هو صاحب المشروع 
+ 
         $bid = Bid::with(['project', 'freelancer'])->findOrFail($id);
 
         $accepted = $this->bidService->accept($bid);
