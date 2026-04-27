@@ -157,7 +157,7 @@ public function scopeForFreelancerProfile($query)
     // protected function ratingText(): Attribute
     // {
     //     return Attribute::get(function () {
-    // سيتم تنفيذ هذا الاستعلام في كل مرو=ة يتم قيه استدعاء السكوب
+    // سيتم تنفيذ هذا الاستعلام في كل مرة يتم قيه استدعاء السكوب
             // if ($this->reviews()->count() === 0) 
     // {
     //             return 'No reviews yet';
@@ -237,4 +237,7 @@ public function scopeSortByRating($query)
     return $query->orderByDesc('reviews_avg_rating');
 }
 // use scope to filtering "ocp"
+
+
+
 }

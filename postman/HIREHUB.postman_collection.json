@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "adb746ab-1fcc-4e1c-854c-82b2e78ef62b",
-    "name": "HIREHUB Copy",
+    "_postman_id": "65219f47-0e27-469a-8c0c-78ef7154d26e",
+    "name": "HIREHUB",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "50482083",
-    "_collection_link": "https://go.postman.co/collection/50482083-adb746ab-1fcc-4e1c-854c-82b2e78ef62b?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/50482083-65219f47-0e27-469a-8c0c-78ef7154d26e?source=collection_link"
   },
   "item": [
     {
@@ -17,6 +17,115 @@
             "header": []
           },
           "response": []
+        },
+        {
+          "name": "closed project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application\\json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 7|2PPIcvoLQEpOw6LvCOXx64BSLLVN6mvLaJ3ufvS4909c4569",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/projects/97/close",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "97",
+                "close"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "closed project",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application\\json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "bearer 7|2PPIcvoLQEpOw6LvCOXx64BSLLVN6mvLaJ3ufvS4909c4569",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/projects/97/close",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    "97",
+                    "close"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 15:18:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Project closed successfully\",\n    \"data\": {\n        \"id\": 97,\n        \"client_id\": 11,\n        \"title\": \"Build a mobile app try to test review\",\n        \"description\": \"I need a cross-platform mobile app for my business.\",\n        \"budget_type\": \"fixed\",\n        \"budget_amount\": \"1500.00\",\n        \"deadline\": \"2026-05-20\",\n        \"status\": \"closed\",\n        \"created_at\": \"2026-04-26T14:28:54.000000Z\",\n        \"updated_at\": \"2026-04-26T15:18:23.000000Z\",\n        \"formatted_budget\": \"1500.00 USD\",\n        \"deadline_status\": \"23.362227008252 days left\"\n    }\n}"
+            }
+          ]
         },
         {
           "name": "project list test",
@@ -161,7 +270,7 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:8000/api/v1/projects/1",
+              "raw": "http://127.0.0.1:8000/api/v1/projects/98",
               "protocol": "http",
               "host": [
                 "127",
@@ -174,7 +283,7 @@
                 "api",
                 "v1",
                 "projects",
-                "1"
+                "98"
               ]
             }
           },
@@ -248,6 +357,76 @@
               ],
               "cookie": [],
               "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Voluptatum nostrum tempora veniam.\",\n        \"description\": \"Dolor dolores dolores exercitationem modi quibusdam nisi. Et id quibusdam ut deleniti minima possimus ea. Reprehenderit qui mollitia sint iusto quisquam.\",\n        \"budget_type\": \"fixed\",\n        \"budget_amount\": \"70.00\",\n        \"formatted_budget\": \"70.00 USD\",\n        \"deadline\": \"2026-05-18\",\n        \"deadline_status\": \"29.717672891481 days left\",\n        \"status\": \"open\",\n        \"client\": {\n            \"id\": 1,\n            \"full_name\": \"Admin User\",\n            \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n            \"city\": \"Beirut\"\n        },\n        \"tags\": [\n            {\n                \"id\": 10,\n                \"name\": \"AI\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Marketing\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Web\"\n            }\n        ],\n        \"attachments\": [],\n        \"bids_count\": null,\n        \"reviews_avg_rating\": null,\n        \"created_at\": \"5 minutes ago\"\n    }\n}"
+            },
+            {
+              "name": "detaills",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "bearer 2|hYPc0SDlOXQ5Wat7jc52RynDZW7xB2GQURB4cY1U1b8375c3",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/projects/98",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    "98"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 27 Apr 2026 00:55:05 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Operation completed successfully\",\n    \"data\": {\n        \"id\": 98,\n        \"title\": \"Build a mobile app try to test review\",\n        \"description\": \"I need a cross-platform mobile app for my business\",\n        \"budget_type\": \"fixed\",\n        \"budget_amount\": \"1500.00\",\n        \"formatted_budget\": \"1500.00 USD\",\n        \"deadline\": \"2026-05-20\",\n        \"deadline_status\": \"22.961739987847 days left\",\n        \"status\": \"open\",\n        \"client\": {\n            \"id\": 9,\n            \"full_name\": \"Lele Kareem\",\n            \"avatar_url\": \"http://127.0.0.1:8000/images/default-avatar.png\",\n            \"city\": \"Beirut\"\n        },\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"Web\"\n            }\n        ],\n        \"attachments\": [\n            {\n                \"id\": 1,\n                \"path\": \"attachments/S2CIlCUHKej6FPWdNHskfOgbs0EpFPBRGQmKTzE2.pdf\",\n                \"url\": \"http://127.0.0.1:8000/storage/attachments/S2CIlCUHKej6FPWdNHskfOgbs0EpFPBRGQmKTzE2.pdf\"\n            }\n        ],\n        \"bids_count\": null,\n        \"reviews_avg_rating\": null,\n        \"created_at\": \"15 minutes ago\"\n    }\n}"
             }
           ]
         }
@@ -907,10 +1086,217 @@
       ]
     },
     {
+      "name": "reviews",
+      "item": [
+        {
+          "name": "reviews Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 7|1confL3nFZFuMqR6ghLhZjAlGBxOp1kG2QkB2oaD154a770e",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"Great project!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/projects/{project}/reviews",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "{project}",
+                "reviews"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "review freelancer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "bearer 10|g4boUi1AERMiqn1uQBPR7ttkgfqvedFa3MGR3Tyg93562baf",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"rating\": 5,\r\n    \"comment\": \"Great freelancer! Delivered on time \"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/v1/freelancers/10/reviews",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "freelancers",
+                "10",
+                "reviews"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "review freelancer",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "bearer 10|g4boUi1AERMiqn1uQBPR7ttkgfqvedFa3MGR3Tyg93562baf",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"rating\": 5,\r\n    \"comment\": \"Great freelancer! Delivered on time \"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:8000/api/v1/freelancers/10/reviews",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "8000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "freelancers",
+                    "10",
+                    "reviews"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.4.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 26 Apr 2026 13:34:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Freelancer reviewed successfully\",\n    \"data\": {\n        \"user_id\": 9,\n        \"rating\": \"5.0\",\n        \"comment\": \"Great freelancer! Delivered on time\",\n        \"reviewable_id\": 10,\n        \"reviewable_type\": \"App\\\\Models\\\\User\",\n        \"updated_at\": \"2026-04-26T13:34:31.000000Z\",\n        \"created_at\": \"2026-04-26T13:34:31.000000Z\",\n        \"id\": 7\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "accept bid",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "bearer 6|RbBoVFosMISz7womvAhq118ouU0K5hjMHQl1Ofp2e592f817",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/bids/1/accept",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "bids",
+            "1",
+            "accept"
+          ]
+        }
       },
       "response": []
     }

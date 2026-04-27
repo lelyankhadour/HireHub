@@ -95,7 +95,19 @@ public function scopeForProjectDetails($query)
         ->withAvg('reviews', 'rating')
         ->withCount('bids');
 }
+// this add for review 
+public function scopeClosed($query)
+{
+    return $query->where('status', 'closed');
+}
 
+public function scopeCompletedByFreelancer($query, $freelancerId)
+{
+    return $query->whereHas('bids', function ($q) use ($freelancerId) {
+        $q->where('freelancer_id', $freelancerId)
+          ->where('status', 'accepted');
+    });
+}
     //------------- Accessors------------------
     
     protected function deadlineStatus(): Attribute
@@ -145,4 +157,5 @@ public function scopeFilterByBudgetRange($query, ?int $min, ?int $max)
         ->when($min, fn ($q) => $q->where('budget_amount', '>=', $min))
         ->when($max, fn ($q) => $q->where('budget_amount', '<=', $max));
 }
+
 }

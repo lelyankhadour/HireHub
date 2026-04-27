@@ -20,7 +20,9 @@ return Application::configure(basePath: dirname(__DIR__))
 
         // alias
         $middleware->alias([
-            'freelancer.verified' => \App\Http\Middleware\EnsureFreelancerIsVerified::class,
+        'client' => \App\Http\Middleware\CheckIsClient::class,
+   
+        'freelancer.verified' => \App\Http\Middleware\EnsureFreelancerIsVerified::class,
         ]);
 
     })
