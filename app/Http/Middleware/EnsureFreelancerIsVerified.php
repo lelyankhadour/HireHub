@@ -5,15 +5,10 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Enums\UserRole;
 
 class EnsureFreelancerIsVerified
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  Closure(Request): (Response)  $next
-     */
-
     public function handle(Request $request, Closure $next)
     {
         $user = $request->user();
@@ -25,7 +20,7 @@ class EnsureFreelancerIsVerified
             ], 401);
         }
 
-        if ($user->role !== 'freelancer') {
+        if ($user->role !== UserRole::Freelancer) {
             return response()->json([
                 'error' => 'Forbidden',
                 'message' => 'Only freelancers can perform this action.'

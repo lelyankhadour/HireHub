@@ -3,13 +3,14 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Enums\UserRole;
 
 class ProfileSkillUpdateRequest extends FormRequest
 {
     public function authorize(): bool
     {
-    // only freelancer can update their skills
-        return auth()->check() && auth()->user()->role === 'freelancer';
+        // only freelancer can update their skills
+        return auth()->check() && auth()->user()->role === UserRole::Freelancer;
     }
 
     public function rules(): array

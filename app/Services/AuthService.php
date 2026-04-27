@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,7 +15,9 @@ class AuthService
             'last_name'  => $data['last_name'],
             'email'      => $data['email'],
             'password'   => Hash::make($data['password']),
-            'role'       => $data['role'],
+            // 'role'       => $data['role'],
+            'role' => UserRole::from($data['role']),
+
             'city_id'    => $data['city_id'] ?? null,
             'is_verified'=> $data['is_verified'] ?? null,
         ]);

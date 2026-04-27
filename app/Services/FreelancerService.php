@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Enums\UserRole;
 use App\Models\User;
 
 class FreelancerService
@@ -10,7 +11,9 @@ class FreelancerService
     { 
            // Scopes encapsulate filtering logic inside the model for reusability.
         return User::query()
-            ->where('role', 'freelancer')
+            // ->where('role', 'freelancer')
+            ->where('role', UserRole::Freelancer)
+
             ->forFreelancerListing($skill, $cityId)
             ->when($sort === 'rating', fn($q) => $q->sortByRating())
             ->paginate(10);
@@ -18,7 +21,9 @@ class FreelancerService
 
     public function showFreelancer(User $user)
     {
-        abort_if($user->role !== 'freelancer', 404);
+        // abort_if($user->role !== 'freelancer', 404);
+        abort_if($user->role !== UserRole::Freelancer, 404);
+
 
         $user->load([
             'skills',

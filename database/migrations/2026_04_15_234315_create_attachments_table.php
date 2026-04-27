@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('attachable_id');
             $table->string('attachable_type');
 
-            $table->string('file_path');
+            $table->string('path');
             $table->string('file_type')->nullable(); // pdf, jpg, zip…
 
             $table->timestamps();

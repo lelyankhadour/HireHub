@@ -7,30 +7,28 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Bid;
 use App\Traits\ResponseTrait;
+use App\Enums\UserRole;
+use App\Enums\ProjectStatus;
+
 class DashboardController extends Controller
-{use ResponseTrait;
+{
+    use ResponseTrait;
     
     public function index()
-    {try{
-        // return response()->json([
-        //     'total_projects'    => Project::count(),
-        //     'open_projects'     => Project::where('status', 'open')->count(),
-        //     'total_freelancers' => User::where('role', 'freelancer')->count(),
-        //     'total_clients'     => User::where('role', 'client')->count(),
-        //     'total_bids'        => Bid::count(),
-        // ]);
+    {
+        try {
+            $data = [
+                'total_projects'    => Project::count(),
+                'open_projects'     => Project::where('status', ProjectStatus::Open)->count(),
+                'total_freelancers' => User::where('role', UserRole::Freelancer)->count(),
+                'total_clients'     => User::where('role', UserRole::Client)->count(),
+                'total_bids'        => Bid::count(),
+            ];
 
-        $data=[
-                 'total_projects'    => Project::count(),
-            'open_projects'     => Project::where('status', 'open')->count(),
-            'total_freelancers' => User::where('role', 'freelancer')->count(),
-            'total_clients'     => User::where('role', 'client')->count(),
-            'total_bids'        => Bid::count(),
-        ];
-         return $this->successResponse($data, "Operation completed successfully", 200);
+            return $this->successResponse($data, "Operation completed successfully", 200);
 
-     }catch (\Throwable $e) {
-            return $this->errorResponse("Something went wrong " , 500);
-        } 
-}
+        } catch (\Throwable $e) {
+            return $this->errorResponse("Something went wrong", 500);
+        }
+    }
 }

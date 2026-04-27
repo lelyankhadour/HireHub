@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileSkillUpdateRequest;
 use App\Http\Requests\UpdateProfileRequest;
@@ -51,7 +52,8 @@ class ProfileController extends Controller
     {try{
         $user = auth()->user();
 
-        abort_if($user->role !== 'freelancer', 403);
+        // abort_if($user->role !== 'freelancer', 403);
+        abort_if($user->role !== UserRole::Freelancer, 403);
 
         $skills = $this->service->updateProfileSkill($user, $request->validated()['skills']);
 

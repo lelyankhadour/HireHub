@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\AvailabilityStatus;
+use App\Enums\UserRole;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -39,12 +41,12 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+                'availability_status' => \App\Enums\AvailabilityStatus::class,
+                     'role' => UserRole::class,
         ];
     }
 
-    protected $casts = [
-        'availability_status' => \App\Enums\AvailabilityStatus::class,
-    ];
+  
 
     protected $appends = [
         'full_name',
@@ -102,7 +104,9 @@ class User extends Authenticatable
 
     public function scopeAvailable($query)
     {
-        return $query->where('availability_status', 'available');
+        // return $query->where('availability_status', 'available');
+        return $query->where('availability_status', AvailabilityStatus::Available);
+
     }
 
     public function scopeTopRated($query)

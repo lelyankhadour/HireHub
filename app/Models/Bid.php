@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\BidStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,9 +17,9 @@ class Bid extends Model
         'status',
     ];
    protected $casts = [
- 'amount'
- =>"integer",
-    'delivery_days' => 'integer',
+ 'amount'=>"integer",
+ 'delivery_days' => 'integer',
+         'status' => BidStatus::class,
     ];
     public function project()
     {

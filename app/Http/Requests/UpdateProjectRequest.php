@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\CleanContent;
+use App\Enums\ProjectStatus;
 
 class UpdateProjectRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
 
     private function projectIsOpen(): bool
     {
-        return $this->project()->status === 'open';
+        return $this->project()->status === ProjectStatus::Open;
     }
 
     public function rules(): array

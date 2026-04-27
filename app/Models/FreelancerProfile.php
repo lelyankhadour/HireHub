@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\AvailabilityStatus;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -23,6 +24,8 @@ class FreelancerProfile extends Model
             'price' => 'decimal:2',
     'delivery_time_days' => 'integer',
     'hourly_rate' => 'decimal:2',
+'availability_status' => AvailabilityStatus::class,
+
     ];
 
     public function user()

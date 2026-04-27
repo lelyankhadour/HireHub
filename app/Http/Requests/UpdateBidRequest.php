@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\CleanContent;
+use App\Enums\ProjectStatus;
+use App\Enums\BidStatus;
 
 class UpdateBidRequest extends FormRequest
 {
@@ -31,12 +33,12 @@ class UpdateBidRequest extends FormRequest
 
     private function projectIsOpen(): bool
     {
-        return $this->project()->status === 'open';
+        return $this->project()->status === ProjectStatus::Open;
     }
 
     private function bidIsPending(): bool
     {
-        return $this->bid()->status === 'pending';
+        return $this->bid()->status === BidStatus::Pending;
     }
 
     public function rules(): array

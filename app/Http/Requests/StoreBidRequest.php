@@ -5,9 +5,13 @@ namespace App\Http\Requests;
 use App\Models\Project;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\CleanContent;
+use App\Enums\UserRole;
+use App\Enums\ProjectStatus;
 
 class StoreBidRequest extends FormRequest
 {
+    protected ?Project $cachedProject = null;
+
     public function authorize(): bool
     {
         return $this->userIsFreelancer()
@@ -16,29 +20,20 @@ class StoreBidRequest extends FormRequest
             && $this->projectIsOpen()
             && $this->notAlreadyBid();
     }
-// use this private function more readable that using if if if... 
 
-// this function cost us 4 query when the authorize test other function 
-// private function project()
-// {
-//     $projectId = $this->route('project');
-//     return Project::find($projectId);
-// }
-protected ?Project $cachedProject = null;
+    private function project(): ?Project
+    {
+        if (!$this->cachedProject) {
+            $projectId = $this->route('project');
+            $this->cachedProject = Project::find($projectId);
+        }
 
-private function project(): ?Project
-{
-    if (!$this->cachedProject) {
-        $projectId = $this->route('project');
-        $this->cachedProject = Project::find($projectId);
+        return $this->cachedProject;
     }
-
-    return $this->cachedProject;
-}
 
     private function userIsFreelancer(): bool
     {
-        return auth()->check() && auth()->user()->role === 'freelancer';
+        return auth()->check() && auth()->user()->role === UserRole::Freelancer;
     }
 
     private function projectExists(): bool
@@ -53,7 +48,7 @@ private function project(): ?Project
 
     private function projectIsOpen(): bool
     {
-        return optional($this->project())->status === 'open';
+        return optional($this->project())->status === ProjectStatus::Open;
     }
 
     private function notAlreadyBid(): bool

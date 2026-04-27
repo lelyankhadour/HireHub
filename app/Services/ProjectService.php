@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Enums\BudgetType;
+use App\Enums\ProjectStatus;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -33,10 +35,15 @@ class ProjectService
             'client_id'     => auth()->id(),
             'title'         => $data['title'],
             'description'   => $data['description'],
-            'budget_type'   => $data['budget_type'],
+            // 'budget_type'   => $data['budget_type'],
+            'budget_type' => BudgetType::from($data['budget_type']),
+
             'budget_amount' => $data['budget_amount'],
             'deadline'      => $data['deadline'],
-            'status'        => 'open',
+            // 'status'        => 'open',
+           'status' => ProjectStatus::Open,
+
+
         ]);
 
         // Tags

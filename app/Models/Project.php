@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\BudgetType;
+use App\Enums\ProjectStatus;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -27,6 +29,8 @@ protected $table = 'projects';
 
     protected $casts = [
         'budget_amount' => 'decimal:2',
+          'budget_type' => BudgetType::class,
+        'status' => ProjectStatus::class,
     ];
 
    
@@ -64,7 +68,9 @@ protected $table = 'projects';
 
     public function scopeOpen($query)
     {
-        return $query->where('status', 'open');
+        // return $query->where('status', 'open');
+        return $query->where('status', ProjectStatus::Open);
+
     }
 
     public function scopeBudgetAbove($query, $amount)
@@ -118,11 +124,16 @@ public function scopeForProjectDetails($query)
     protected function formattedBudget(): Attribute
     {
         return Attribute::get(function () {
-            if ($this->budget_type === 'fixed') {
+         
+            if ($this->budget_type === BudgetType::Fixed)
+
+                {
                 return "{$this->budget_amount} USD";
             }
 
-            if ($this->budget_type === 'hourly') {
+        if ($this->budget_type === BudgetType::Hourly)
+
+                 {
                 return "\${$this->budget_amount}/hr";
             }
 

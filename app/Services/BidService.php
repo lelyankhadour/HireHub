@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Contracts\BidServiceInterface;
+use App\Enums\BidStatus;
+use App\Enums\ProjectStatus;
 use App\Models\Bid;
 use App\Models\Project;
 use Illuminate\Support\Facades\DB;
@@ -30,15 +32,21 @@ class BidService implements BidServiceInterface
 // I used a database transaction here to make sure all updates happen together
         return DB::transaction(function () use ($bid) {
       
-            $bid->update(['status' => 'accepted']);
+            // $bid->update(['status' => 'accepted']);
+            $bid->update(['status' => BidStatus::Accepted]);
+
 
            
-            $bid->project->update(['status' => 'in_progress']);
+            // $bid->project->update(['status' => 'in_progress']);
+            $bid->project->update(['status' => ProjectStatus::InProgress]);
+
 
        
             $bid->project->bids()
                 ->where('id', '!=', $bid->id)
-                ->update(['status' => 'rejected']);
+                // ->update(['status' => 'rejected']);
+                ->update(['status' => BidStatus::Rejected]);
+
  // fresh() is used to return updated relations without reloading everything manually.
             return $bid->fresh(['project', 'freelancer']);
         });
