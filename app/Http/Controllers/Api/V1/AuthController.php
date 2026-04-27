@@ -30,9 +30,13 @@ class AuthController extends Controller
             ];
             return $this->successResponse($data, "Registertion completed successfully", 201);
 
-        } catch (\Throwable $e) {
-            return $this->errorResponse("An unexpected error occurred ", 500);
-        }
+        // } catch (\Throwable $e) {
+        //     return $this->errorResponse("An unexpected error occurred ", 500);
+        // }
+      }  catch (\Throwable $e) {
+    return $this->errorResponse($e->getMessage(), 500);
+}
+
     }
 
     public function login(LoginRequest $request)

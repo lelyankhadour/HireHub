@@ -19,7 +19,9 @@ class AuthService
             'role' => UserRole::from($data['role']),
 
             'city_id'    => $data['city_id'] ?? null,
-            'is_verified'=> $data['is_verified'] ?? null,
+            // 'is_verified'=> $data['is_verified'] ?? null,
+            'is_verified' => true,
+
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;

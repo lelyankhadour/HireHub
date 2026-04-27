@@ -53,7 +53,10 @@ class ProfileController extends Controller
         $user = auth()->user();
 
         // abort_if($user->role !== 'freelancer', 403);
-        abort_if($user->role !== UserRole::Freelancer, 403);
+     
+
+abort_if($user->role !== UserRole::Freelancer, 403);
+
 
         $skills = $this->service->updateProfileSkill($user, $request->validated()['skills']);
 

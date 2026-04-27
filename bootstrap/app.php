@@ -22,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'freelancer.verified' => \App\Http\Middleware\EnsureFreelancerIsVerified::class,
         ]);
+   $middleware->alias(['client' => \App\Http\Middleware\CheckIsClient::class     ]);
 
     })
     ->withExceptions(function (Exceptions $exceptions): void {

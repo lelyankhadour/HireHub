@@ -27,7 +27,8 @@ class FreelancerController extends Controller
         $freelancers = $this->service->listFreelancers($skill, $cityId, $sort);
 
         // return FreelancerResource::collection($freelancers);
-                 return $this->successResponse(FreelancerResource::collection($freelancers), "Operation completed successfully", 200);
+                //  return $this->successResponse(FreelancerResource::collection($freelancers), "Operation completed successfully", 200);
+                 return $this->successResponse($freelancers, "Operation completed successfully", 200);
 
   }catch (\Throwable $e) {
             return $this->errorResponse("Something went wrong " , 500);

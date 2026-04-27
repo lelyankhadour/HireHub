@@ -17,23 +17,29 @@ class ProjectController extends Controller
     {
         $this->service = $service;
     }
-    
-
     public function index(Request $request)
-    {try{
+{
+    try {
         $projects = $this->service->list($request);
-        // return ProjectResource::collection($projects);
-        return $this->successResponse(ProjectResource::collection($projects), "Operation completed successfully", 200);
-        }catch (\Throwable $e) {
-            return $this->errorResponse("Something went wronge " . $e->getMessage(), 500);
-        }
-    }
+  // return ProjectResource::collection($projects);
+    //     return $this->successResponse(ProjectResource::collection($projects), "Operation completed successfully", 200);
+  
+        return $this->successResponse($projects, "Operation completed successfully", 200);
 
-    public function show(Project $project)
+    } catch (\Throwable $e) {
+        return $this->errorResponse("Something went wrong " . $e->getMessage(), 500);
+    }
+}
+
+  
+
+    public function show( $project)
     {try{
+         $project = Project::findOrFail($project);
         $project = $this->service->show($project);
         // return new ProjectResource($project);
           return  $this->successResponse(new ProjectResource($project), "Operation completed successfully", 200);
+        //   return  $this->successResponse($project, "Operation completed successfully", 200);
            }catch (\Throwable $e) {
             return $this->errorResponse("Something went wrong " . $e->getMessage(), 500);
         }
@@ -48,4 +54,20 @@ class ProjectController extends Controller
             return $this->errorResponse("Something went wrong " . $e->getMessage(), 500);
         }
     }
+    public function close( $project)
+{
+            $project = Project::findOrFail($project);
+    // dd(request()->path());
+    try {
+        $closedProject = $this->service->closeProject($project);
+// dd( $closedProject);
+
+
+        return $this->successResponse($closedProject, "Project closed successfully");
+
+    } catch (\Exception $e) {
+        return $this->errorResponse($e->getMessage(), 400);
+    }
+}
+
 }
