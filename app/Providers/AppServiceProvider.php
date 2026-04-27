@@ -5,6 +5,7 @@ namespace App\Providers;
 use DB;
 use Illuminate\Support\ServiceProvider;
 use Log;
+use App\Contracts\NotificationInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
         \App\Contracts\BidServiceInterface::class,
         \App\Services\BidService::class
+    );
+        $this->app->bind(
+       \App\Contracts\NotificationInterface::class, 
+        \App\Services\Notifications\EmailNotificationDriver::class
     );
     }
 
